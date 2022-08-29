@@ -1,0 +1,14 @@
+{
+  getCourses{
+    _id
+    title
+  }
+}
+
+================
+
+{
+  getCourse(id: "anyid2"){
+    title
+  }
+}

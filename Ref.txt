@@ -1,0 +1,11 @@
+npx license mit > LICENSE && npx gitignore node && git init && npm init -y
+
+$ npm install graphql 
+$ npm i express express-graphql
+$ npm i graphql-tools
+$ npm i mongo
+
+
+$ npm i nodemon -D
+$ npm i standard -D
+$ npm i dotenv

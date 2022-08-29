@@ -1,0 +1,21 @@
+type Course {
+    _id: ID!
+    title: String!
+    teacher: String
+    description: String!
+    topic: String
+}
+
+type Query {
+    "Get all courses"
+    getCourses: [Course]
+    "Return a course by ID"
+    getCourse(id : ID!): Course
+}
+
+    # type Query {
+    #     "Return a message"
+    #     hello: String
+    #     cheers: String
+    #     test: String
+    # }
