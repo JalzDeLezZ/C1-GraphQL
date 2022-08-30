@@ -1,0 +1,35 @@
+mutation AddPersonToCourse2 ($course: ID!, $person: ID!){
+  addPeople(courseID: $course, personID: $person){
+    _id
+    title
+  }
+}
+
+variables :
+
+{
+  "course": "630d79445a36eeeedb96bbe4",
+  "person": "630d859fb6993f48b95713d9"
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+query GetCourse2($course: ID!){
+  getCourse(id: $course){
+    _id
+    title
+    people{
+      _id
+      name
+      email
+    }
+  }
+}
+
+variables :
+
+{
+  "course": "630d79445a36eeeedb96bbe4"
+}

@@ -93,3 +93,86 @@ mutation {
     title
   }
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+# mutation {
+#   updateStudent(
+#     id:"630d83a4bc10e40edd5377ea",
+#     input:{
+#     	email: "adsf@asdf.com"
+#   	}
+#   ){
+#     _id
+#     name
+#     email
+#   }
+# }
+
+# {
+#   getStudents{
+#     _id
+#     name
+#   	email
+#   }
+# }
+
+# {
+#   getStudent( id: "630d83a4bc10e40edd5377ea"){
+#     _id
+#     name
+#     email
+#   }
+# }
+
+# mutation {
+#   createCourse(input:{
+#     title: "lorem"
+#     description: "description"
+#     topic: "design"
+#   }){
+#     _id
+#     title
+#   }
+# }
+
+{
+  getCourses{
+    title
+    _id
+    description
+    topic
+    teacher
+		people{
+      email
+      name
+      _id
+    }
+  }
+}
+
+# mutation {
+#   updateCourse(
+#     id:"630d6110bc10e40edd5377df", 
+#     input:{
+#     	title: "lorem"
+#   	}
+#   ){
+#     _id
+#     title
+#   }
+# }
+
+# c : 630d79445a36eeeedb96bbe4
+# s : 630d859fb6993f48b95713d9
+
+# mutation {
+#   addPeople(
+#     courseID: "630d79445a36eeeedb96bbe4",
+#     personID: "630d859fb6993f48b95713d9"
+#   ){
+#     _id
+#     title
+#   }
+# }
+
