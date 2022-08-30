@@ -34,17 +34,3 @@ app.use(
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/api`);
 });
-
-//  =======================================================================0
-
-// Settings resolvers
-// const resolvers = {hello: () => {  return "Hello World";}};
-
-// execute query in the terminal
-/* graphql({
-    schema: schema,
-    source: "{ cheers }",
-    rootValue: resolvers,
-  })
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err)); */
