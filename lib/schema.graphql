@@ -20,7 +20,7 @@ input CourseEditInput {
     topic: String
 }
 
-# STUDENT
+# %%%%%%%%%%%%%% STUDENT %%%%%%%%%%%%%%
 
 type Student {
     _id: ID!
@@ -38,6 +38,8 @@ input StudentEditInput {
     name: String
     email: String
 }
+
+# %%%%%%%%%%%%%% QUERIES %%%%%%%%%%%%%%
 
 type Query {
     "Get all courses"
@@ -57,11 +59,11 @@ type Mutation {
     "Create a new course"
     createCourse(input: CourseInput!): Course
     "Update a course"
-    updateCourse(id: ID!, input: CourseEditInput!): Course
+    updateCourse(id: ID!, input: CourseEditInput): Course
 
     # STUDENT
     "Create a new student"
     createStudent(input: StudentInput!): Student
     "Update a student"
-    updateStudent(id: ID!, input: StudentInput!): Student
+    updateStudent(id: ID!, input: StudentEditInput): Student
 }
