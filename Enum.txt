@@ -1,0 +1,19 @@
+
+mutation CreateNewCourse($createinput: CourseInput!){
+  createCourse(input: $createinput){
+    _id
+    title
+  }
+}
+
+--------------------
+
+{
+  "createinput": {
+    "title": "title",
+    "teacher": "professor 1",
+    "description": "Course 5",
+    "topic": "programation",
+    "level": ["middler", "advanced", "junior"]
+  }
+}

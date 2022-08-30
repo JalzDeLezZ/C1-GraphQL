@@ -1,3 +1,26 @@
+"Verify types of level"
+enum Level {
+    junior
+    middler
+    advanced
+}
+
+interface Person {
+    _id: ID!
+    name: String!
+    email: String!
+}
+
+
+type Student implements Person {
+    avatar: String
+}
+
+type Monidor implements Person {
+    phone: String
+}
+
+
 type Course {
     _id: ID!
     title: String!
@@ -5,6 +28,7 @@ type Course {
     description: String!
     topic: String
     people: [Student]
+    level: Level
 }
 
 input CourseInput {
@@ -12,6 +36,7 @@ input CourseInput {
     teacher: String
     description: String!
     topic: String
+    level: Level
 }
 
 input CourseEditInput {
@@ -22,12 +47,12 @@ input CourseEditInput {
 }
 
 # %%%%%%%%%%%%%% STUDENT %%%%%%%%%%%%%%
-
+""" 
 type Student {
     _id: ID!
     name: String!
     email: String!
-}
+} """
 
 
 input StudentInput {
