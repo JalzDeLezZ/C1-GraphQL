@@ -13,9 +13,18 @@ type Query {
     getCourse(id : ID!): Course
 }
 
-    # type Query {
-    #     "Return a message"
-    #     hello: String
-    #     cheers: String
-    #     test: String
-    # }
+input CourseInput {
+    title: String!
+    teacher: String
+    description: String!
+    topic: String
+}
+
+type Mutation {
+    "Create a new course"
+    createCourse(input: CourseInput!): Course
+    # "Update a course"
+    # updateCourse(id: ID!, input: CourseInput): Course
+    # "Delete a course"
+    # deleteCourse(id: ID!): Course
+}

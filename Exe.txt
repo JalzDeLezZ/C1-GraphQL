@@ -8,7 +8,22 @@
 ================
 
 {
-  getCourse(id: "anyid2"){
+  getCourse(id: "630d2858bc10e40edd5377d6"){
+    _id
+    title
+    description
+  }
+}
+
+================
+
+mutation {
+  createCourse(input:{
+    title: "lorem"
+    description: "description"
+    topic: "design"
+  }){
+    _id
     title
   }
 }
