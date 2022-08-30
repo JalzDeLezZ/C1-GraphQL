@@ -9,3 +9,4 @@ $ npm i mongo
 $ npm i nodemon -D
 $ npm i standard -D
 $ npm i dotenv
+$ npm i cors
