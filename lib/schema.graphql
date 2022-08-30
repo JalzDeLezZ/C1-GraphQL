@@ -5,21 +5,8 @@ enum Level {
     advanced
 }
 
-interface Person {
-    _id: ID!
-    name: String!
-    email: String!
-}
 
-
-type Student implements Person {
-    avatar: String
-}
-
-type Monidor implements Person {
-    phone: String
-}
-
+# %%%%%%%%%%%%%%%%%%%%%%%%
 
 type Course {
     _id: ID!
@@ -46,23 +33,40 @@ input CourseEditInput {
     topic: String
 }
 
-# %%%%%%%%%%%%%% STUDENT %%%%%%%%%%%%%%
-""" 
-type Student {
+# %%%%%%%%%%%%%% PERSON %%%%%%%%%%%%%%
+
+interface Person {
     _id: ID!
-    name: String!
-    email: String!
-} """
-
-
-input StudentInput {
     name: String!
     email: String!
 }
 
-input StudentEditInput {
+input PersonInput {
+    name: String!
+    email: String!
+    phone: String
+    avatar: String
+}
+
+type Student implements Person{
+    _id: ID!
+    name: String!
+    email: String!
+    avatar: String
+}
+
+type Monitor implements Person {
+    _id: ID!
+    name: String!
+    email: String!
+    phone: String
+}
+
+input PersonEditInput {
     name: String
     email: String
+    phone: String
+    avatar: String
 }
 
 # %%%%%%%%%%%%%% QUERIES %%%%%%%%%%%%%%
@@ -76,9 +80,9 @@ type Query {
     #  STUDENT
 
     "Get all students"
-    getStudents: [Student]
+    getPeople: [Person]
     "Return a student by ID"
-    getStudent(id : ID!): Student
+    getPerson(id : ID!): Person
 }
 
 type Mutation {
@@ -88,10 +92,10 @@ type Mutation {
     updateCourse(id: ID!, input: CourseEditInput): Course
 
     # STUDENT
-    "Create a new student"
-    createStudent(input: StudentInput!): Student
-    "Update a student"
-    updateStudent(id: ID!, input: StudentEditInput): Student
+    "Create a new person"
+    createPerson(input: PersonInput!): Person
+    "Update a person"
+    updatePerson(id: ID!, input: PersonEditInput): Person
 
     # PERSON TO COURSE
     "Add students to a course"
